@@ -1,7 +1,7 @@
 // ============================================================================
 // TransportFlow frontend (vanilla JS) — talks to the Flask backend in ../backend
 // ============================================================================
-const API_BASE = "http://localhost:5000/api"; // change if you deploy the backend elsewhere
+const API_BASE = "https://transport-app-production-4c8a.up.railway.app/api";
 
 const STATUSES = ["Pending","Driver Assigned","Goods Loaded","In Transit","Delivered","Payment Received"];
 const state = { view: "dashboard", bookings: [], drivers: [], clients: [], dashboard: null };
