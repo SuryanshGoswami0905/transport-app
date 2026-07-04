@@ -1,5 +1,7 @@
 # TransportFlow — Transport Broker Management System
 
+**🔗 Live Demo:** [transportflow-suryansh.netlify.app](https://transportflow-suryansh.netlify.app) *(PIN: 1234)*
+
 A full-stack web application for transport brokers to manage bookings, drivers,
 clients, and payments — with real-time commission tracking and cloud-based
 document/photo storage.
@@ -92,6 +94,13 @@ python -m http.server 8000
 
 Open `http://localhost:8000` in your browser. Default login PIN is `1234`
 (configurable via `APP_PIN` in `.env`).
+
+## Deployment
+
+This project is deployed using:
+- **Backend + Database:** [Railway](https://railway.app) (Flask API + MySQL)
+- **Frontend:** [Netlify](https://netlify.com) (static hosting, auto-deploys from GitHub)
+- **Image Storage:** [Cloudinary](https://cloudinary.com)
 
 ## Environment Variables
 
