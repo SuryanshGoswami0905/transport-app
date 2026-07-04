@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TransportFlow — Broker Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOGIN SCREEN ============ -->
+<div id="loginScreen" class="login-wrap">
+  <div class="login-card">
+    <div class="login-logo"><i class="fa-solid fa-truck"></i></div>
+    <div class="fd login-title">TransportFlow</div>
+    <div class="login-sub">Enter PIN to continue</div>
+    <div id="pinDots" class="pin-dots"></div>
+    <div id="pinPad" class="pin-pad"></div>
+    <div id="loginError" class="login-error" hidden>Incorrect PIN, try again</div>
+  </div>
+</div>
+
+<!-- ============ APP SHELL ============ -->
+<div id="appShell" class="app-shell" hidden>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-brand fd"><i class="fa-solid fa-truck"></i> TransportFlow</div>
+    <nav class="sidebar-nav">
+      <button class="sl" data-view="dashboard"><i class="fa-solid fa-gauge-high"></i> Dashboard</button>
+      <button class="sl" data-view="bookings"><i class="fa-solid fa-file-lines"></i> Bookings</button>
+      <button class="sl" data-view="drivers"><i class="fa-solid fa-users"></i> Drivers</button>
+      <button class="sl" data-view="clients"><i class="fa-solid fa-building"></i> Clients</button>
+      <button class="sl" data-view="payments"><i class="fa-solid fa-credit-card"></i> Payments <span id="paymentsBadge" class="sp-badge" hidden></span></button>
+      <button class="sl" data-view="reports"><i class="fa-solid fa-chart-column"></i> Reports</button>
+    </nav>
+    <button id="logoutBtn" class="sl logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+  </aside>
+  <div id="sidebarOverlay" class="sidebar-overlay" hidden></div>
+
+  <div class="main-col">
+    <header class="topbar">
+      <button id="menuBtn" class="icon-btn mobile-only"><i class="fa-solid fa-bars"></i></button>
+      <div id="topbarTitle" class="fd topbar-title">Dashboard</div>
+      <div class="topbar-right">
+        <i class="fa-solid fa-bell"></i>
+        <span id="topbarBadge" class="sp-badge" hidden></span>
+      </div>
+    </header>
+
+    <main id="mainContent" class="main-content sc"></main>
+  </div>
+
+  <nav class="bottom-nav mobile-only">
+    <button class="bb" data-view="dashboard"><i class="fa-solid fa-gauge-high"></i><span>Home</span></button>
+    <button class="bb" data-view="bookings"><i class="fa-solid fa-file-lines"></i><span>Bookings</span></button>
+    <button class="bb" data-view="drivers"><i class="fa-solid fa-users"></i><span>Drivers</span></button>
+    <button class="bb" data-view="payments"><i class="fa-solid fa-credit-card"></i><span>Payments</span></button>
+    <button class="bb" data-view="reports"><i class="fa-solid fa-chart-column"></i><span>Reports</span></button>
+  </nav>
+</div>
+
+<!-- ============ MODAL ROOT (booking / driver / client forms render here) ============ -->
+<div id="modalRoot"></div>
+
+<!-- ============ TOAST ============ -->
+<div id="toast" class="toast" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>
